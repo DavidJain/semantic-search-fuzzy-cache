@@ -205,4 +205,83 @@ Request:
 {
  "query": "space shuttle launch"
 }
+Response:
 
+{
+ "query": "...",
+ "cache_hit": false,
+ "matched_query": null,
+ "similarity_score": 0.0,
+ "result": "...",
+ "dominant_cluster": 3
+}
+GET /cache/stats
+
+Returns current cache statistics.
+
+Example:
+
+{
+ "total_entries": 42,
+ "hit_count": 17,
+ "miss_count": 25,
+ "hit_rate": 0.405
+}
+DELETE /cache
+
+Clears the cache and resets statistics.
+
+Running the Project
+Create environment
+python -m venv venv
+
+Activate:
+
+venv\Scripts\activate
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run the API server:
+
+uvicorn main:app --reload
+
+API documentation will be available at:
+
+http://localhost:8000/docs
+Docker Deployment
+
+Build the container:
+
+docker build -t semantic-search .
+
+Run the container:
+
+docker run -p 8000:8000 semantic-search
+
+Or using docker-compose:
+
+docker-compose up --build
+Project Structure
+src/
+├── api
+├── cache
+├── clustering
+├── data_loader
+├── embeddings
+├── services
+└── vector_store
+Technologies Used
+
+Python
+
+FastAPI
+
+Sentence Transformers
+
+ChromaDB
+
+Scikit-learn
+
+Docker
