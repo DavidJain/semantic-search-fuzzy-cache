@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sentence-transformers
+chromadb
+scikit-learn
+numpy
+pandas
+matplotlib
+tqdm
+
+
